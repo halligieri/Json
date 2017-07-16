@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button onclick="mostrarPersona(jsonObj)">Mostrar Persona</button><br>
+    <input onclick="mostrarPersona()" type="button" name="" value="MOSTRAR">
+
+    <p id="json2"></p>
+
+    <button onclick="mostrarMayorEdad()">Mostrar Mayor Edad</button><br>
+
+
+    <script type="text/javascript">
+
+    var json2 = '{"persona": ['+'{"nombre":"Carlos","edad":"001"},'+
+                                '{"nombre":"Carlos","edad":"23"},'+
+                                '{"nombre":"Carlos","edad":"34"},'+
+                                '{"nombre":"Carlos","edad":"56"},'+
+                                '{"nombre":"Carlos","edad":"12"},'+
+                                '{"nombre":"Carlos","edad":"26"},'+
+                                '{"nombre":"Carlos","edad":"65"},'+
+                                '{"nombre":"Carlos","edad":"34"},'+
+                                '{"nombre":"Carlos","edad":"78"},'+
+                                '{"nombre":"Carlos","edad":"43"}]}';
+      var jsonObj = JSON.parse(json2);
+
+      function mostrarPersona(json) {
+        var out = "Listado de Pesronas: <br>"
+        var i;
+          for ( i = 0; i < json.persona.length; i++) {
+
+          out+= "Nombre: " + json.persona[i].nombre + "Edad: " + json.persona[i].edad + "<br>";
+
+          }
+
+        //document.getElementById('json2').innerHTML = out;
+
+      }
+
+      mostrarPersona(jsonObj);
+      //mostrarPersona(jsonObj);
+      function mostrarMayorEdad(json) {
+
+      }
+
+
+
+
+
+    </script>
+  </body>
+
+
+</html>

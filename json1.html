@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Json 1</title>
+  </head>
+  <body>
+    <p id="json1"></p>
+
+  </body>
+  <script type="text/javascript">
+
+  var json1 = '{"estudiantes": ['+'{"codigo":"001", "nombre":"Carlos"},'+
+                                  '{"codigo":"001", "nombre":"Carlos"},'+
+                                  '{"codigo":"001", "nombre":"Carlos"}]}';
+
+  var jsonObj = JSON.parse(json1);
+
+    function leerJson(json) {
+      var listaEstudiantes="Los estudiantes son: <br>";
+      var i;
+      for(i=0;i<json.estudiantes.length;i++) {
+        listaEstudiantes+="Codigo: "+json.estudiantes[i].codigo+ "Nombre: " + json.estudiantes[i].nombre + "<br>";
+      }
+      document.getElementById('json1').innerHTML = listaEstudiantes;
+    }
+
+
+  leerJson(jsonObj);
+  </script>
+</html>

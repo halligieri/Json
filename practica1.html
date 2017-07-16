@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>practica 1</title>
+
+  </head>
+  <body>
+    <h1>Vehiculo 1</h1>
+
+    <p id="persona11"></p>
+    <p id="persona12"></p>
+    <p id="persona13"></p>
+
+    <h1>Vehiculo 2</h1>
+
+    <p id="persona21"></p>
+    <p id="persona22"></p>
+    <p id="persona23"></p>
+
+    <h1>Vehiculo 3</h1>
+
+    <p id="persona31"></p>
+    <p id="persona32"></p>
+    <p id="persona33"></p>
+
+
+
+  </body>
+  <script type="text/javascript">
+
+  var persona1 = {placa:"001", marca:"Ford", modelo:"focus"};
+
+  document.getElementById("persona11").innerHTML=persona1.placa;
+  document.getElementById("persona12").innerHTML=persona1.marca;
+  document.getElementById("persona13").innerHTML=persona1.modelo;
+
+  var persona2 =new Object();
+  persona2.placa="002";
+  persona2.marca="Fiat";
+  persona2.modelo="Siena";
+
+  document.getElementById("persona21").innerHTML=persona2.placa;
+  document.getElementById("persona22").innerHTML=persona2.marca;
+  document.getElementById("persona23").innerHTML=persona2.modelo;
+
+  function persona3(placa,marca,modelo) {
+    this.placa = placa;
+    this.marca = marca;
+    this.modelo = modelo;
+
+
+
+  }
+
+  var persona3 =new persona3("003","Renault","Megane");
+
+  document.getElementById("persona31").innerHTML=persona3.placa;
+  document.getElementById("persona32").innerHTML=persona3.marca;
+  document.getElementById("persona33").innerHTML=persona3.modelo;
+
+  </script>
+
+
+
+
+</html>

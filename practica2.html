@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>funcion suma</title>
+  </head>
+  <body>
+    <h1>funcion</h1>
+
+    <p>el resultados de a + b es: </p>
+    <p id="funcionSuma"></p>
+
+    <h1>Numbers Metodo Suma</h1>
+
+    <p id="number"></p>
+
+    <h1>Metodo Resta</h1>
+
+    <p id="number1"></p>
+
+
+
+    <script type="text/javascript">
+      function suma(numero1, numero2) {
+        return numero1 +numero2
+      }
+
+    var resultado = suma(5,10);
+
+      document.getElementById('funcionSuma').innerHTML = resultado;
+      //-------------------------------------------------------------
+
+
+    Number.prototype.metodoSuma=function() { //esta propiedad crea un metodo numerico para luego aplicarselo a una variable que contengo un numero
+      return this +4/7;
+    }
+
+      var resultado1 =23;
+
+    document.getElementById('number').innerHTML = resultado1.metodoSuma();//aqui le aplico con la notacion de punto el metodo numerico "metodoSuma" a la variable resultado1
+                                                                          //y luego lo muestro en el HTML
+    //---------------------------------------------------------------------------------------------------------------
+
+    function metodoruma(n) {
+    return this.Number.prototype;
+    }
+
+    Number.prototype.metodoResta =function() { //esta propiedad crea un metodo numerico para luego aplicarselo a una variable que contengo un numero
+      return this -4/7;
+    }
+
+    var resultado2 =23;
+
+    document.getElementById('number1').innerHTML = resultado2.metodoResta();//aqui le aplico con la notacion de punto el metodo numerico "metodoSuma" a la variable resultado1
+                                                                          //y luego lo muestro en el HTML
+    </script>
+  </body>
+</html>

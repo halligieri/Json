@@ -53,23 +53,22 @@
   }
   //-----------------------------------------------
   function  promedio(json){
-  var out ="-------------NOTA PROMEDIO----------------";
-  var pos = 0;
-  var aux = out+="";
+  var out ="-------------NOTA PROMEDIO----------------<br>";
   var promedio = 0;
+    var add = out+="";
 
   for (i = 0; i < json.length; i++) {
     promedio += json[i].nota / json.length;
   }
 
-  document.getElementById("id2").innerHTML = "Las nota promedio de los estudiantes es :"+ promedio +"<br>";
+  document.getElementById("id2").innerHTML =add + "Las nota promedio de los estudiantes es : "+ promedio +"<br>";
   }
   //------------------------------------------------
   function notaAlta(json){
-  var out ="-------------NOTA MAS ALTA----------------";
+  var out ="-------------NOTA MAS ALTA----------------<br>";
   var notaAlta = json[0].nota;
   var pos = 0;
-  var aux = out+="";
+  var add1 = out+="";
 
   for (i = 0; i < json.length; i++) {
 
@@ -79,15 +78,15 @@
   }
   }
 
-  document.getElementById("id3").innerHTML = aux +"Las nota mas alta de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
+  document.getElementById("id3").innerHTML = add1 +"Las nota mas alta de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
   }
   //------------------------------------------------
 
   function notaBaja(json){
-  var out ="-------------NOTA MAS BAJA----------------";
+  var out ="-------------NOTA MAS BAJA----------------<br>";
   var notaBaja = json[0].nota;
   var pos = 0;
-  var aux = out+="";
+  var add2 = out+="";
 
   for (i = 0; i < json.length; i++) {
 
@@ -97,7 +96,7 @@
   }
   }
 
-  document.getElementById("id4").innerHTML = aux +"Las nota mas baja de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
+  document.getElementById("id4").innerHTML = add2 +"Las nota mas baja de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
   }
 
   //-----------------------------------------------

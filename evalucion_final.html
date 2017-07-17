@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Evaluacion Final</title>
+  </head>
+  <body>
+    <h1>Evaluacion Final</h1>
+    <p><button onclick="mostrarEstudiantes()" type="button" name="button">Mostrar Estudiantes</button></p>
+
+    <p id="id1"></p>
+
+    <p><button onclick="calcularNotaPromedio();" type="button" name="button">Nota Promedio</button></p>
+
+    <p id="id2"></p>
+
+    <p><button onclick="mostrarMayorNota();" type="button" name="button">Mayor Notar</button></p>
+
+    <p id="id3"></p>
+
+    <p><button onClick="mostrarMenorNota();" type="button" name="button">Menor Nota</button></p>
+
+    <p id="id4"></p>
+
+  </body>
+
+  <script type="text/javascript">
+
+  //Creando objeto json
+
+  var estudiantes=[
+                    {"codigo":"1","nombre":"Carlos Rodriguez","nota":8},
+                    {"codigo":"2","nombre":"Samantha Gomez","nota":6},
+                    {"codigo":"3","nombre":"Mauricio Achaval","nota":4},
+                    {"codigo":"4","nombre":"Rodrigo Benitez","nota":5},
+                    {"codigo":"5","nombre":"Cintya Carabajal","nota":7.5},
+                    {"codigo":"6","nombre":"Horacio Hernandez","nota":9},
+                    {"codigo":"7","nombre":"Victor Zapata","nota":6.5},
+                    {"codigo":"8","nombre":"Veronica Nuñez","nota":8.5},
+                    {"codigo":"9","nombre":"Paula Villavicencio","nota":1},
+                    {"codigo":"10","nombre":"Mirtha Falcon","nota":9.5}
+
+                  ];
+  //----------------------------------------------
+  function leerJSON(json) {
+      var out = "-----------Estudiantes-----------<br>";
+      var i;
+      for (i = 0; i < json.length; i++) {
+          out += "Codigo: " + json[i].codigo + "-" + "Nombre: " + json[i].nombre + "Nota: " + json[i].nota + "<br>";
+      }
+      document.getElementById("id1").innerHTML = out;
+  }
+  //-----------------------------------------------
+
+  function calcularEdadMayor(json) {
+      var out = "-----------Nota Mayor-----------<br>";
+      var notaMayor = json[0].nota;
+      var pos = 0;
+      var aux = "";
+      for (var i = 0;i < json.length; i++) {
+        jsonNota = json[i].nota;
+        jsonNotaMayor=Math.max(jsonNota);
+          if (json[i].nota >= 18) {
+              notaMayor = json[i].nota;
+              pos = i;
+              aux=aux+json[pos].nombre+"<br>";
+          }
+      }
+      document.getElementById("id3").innerHTML = "Las personas con mayoría de edad son: " + aux;
+  }
+
+  //-----------------------------------------------
+
+  function calcularNotaPromedio() {
+
+  }
+  //-----------------------------------------------
+
+  function mostrarMayorNota() {
+
+  }
+  //-----------------------------------------------
+
+  function mostrarMenorNota() {
+
+  }
+  //----------------------------------------------
+
+  function mostrarEstudiantes() {
+    leerJSON(estudiantes);
+  }
+  //----------------------------------
+  function mostrarMayorNota() {
+    calcularEdadMayor(estudiantes);
+  }
+
+  </script>
+</html>

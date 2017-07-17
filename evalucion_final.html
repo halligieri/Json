@@ -15,7 +15,7 @@
 
     <p id="id2"></p>
 
-    <p><button onclick="mostrarMayorNota();" type="button" name="button">Mayor Notar</button></p>
+    <p><button onclick="mostrarMayorNota();" type="button" name="button">Mayor Nota</button></p>
 
     <p id="id3"></p>
 
@@ -52,38 +52,69 @@
       document.getElementById("id1").innerHTML = out;
   }
   //-----------------------------------------------
+  function  promedio(json){
+  var out ="-------------NOTA PROMEDIO----------------";
+  var notaPromedio = json[0].nota;
+  var pos = 0;
+  var aux = out+="";
+  var promedio = 0;
 
-  function calcularNotaMayor(json) {
-      var out = "-----------Nota Mayor-----------<br>";
-      var notaMayor = json[0].nota;
-      var pos = 0;
-      var aux = "";
-      for (var i = 0;i < json.length; i++) {
-        jsonNota = json[i].nota;
-        jsonNotaMayor=Math.max(jsonNota);
-          if (json[i].nota >= 18) {
-              notaMayor = json[i].nota;
-              pos = i;
-              aux=aux+json[pos].nombre+"<br>";
-          }
-      }
-      document.getElementById("id3").innerHTML = "Las personas con mayoría de edad son: " + aux;
+  for (i = 0; i < json.length; i++) {
+
+  if (json[i].nota > notaPromedio) {
+  notaPromedio += json[i].nota;
+  promedio = notaPromedio / json.length;
+  pos = i;
+  }
+  }
+
+  document.getElementById("id3").innerHTML = aux +"Las nota promedio de los estudiantes es : " +json[pos].nombre + " " + "Con una nota de: " +promedio + "<br>";
+  }
+  //------------------------------------------------
+  function notaAlta(json){
+  var out ="-------------NOTA MAS ALTA----------------";
+  var notaAlta = json[0].nota;
+  var pos = 0;
+  var aux = out+="";
+
+  for (i = 0; i < json.length; i++) {
+
+  if (json[i].nota > notaAlta) {
+  notaAlta = json[i].nota;
+  pos = i;
+  }
+  }
+
+  document.getElementById("id3").innerHTML = aux +"Las nota mas alta de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
+  }
+  //------------------------------------------------
+
+  function notaBaja(json){
+  var out ="-------------NOTA MAS BAJA----------------";
+  var notaBaja = json[0].nota;
+  var pos = 0;
+  var aux = out+="";
+
+  for (i = 0; i < json.length; i++) {
+
+  if (json[i].nota < notaBaja) {
+  notaBaja = json[i].nota;
+  pos = i;
+  }
+  }
+
+  document.getElementById("id4").innerHTML = aux +"Las nota mas alta de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
   }
 
   //-----------------------------------------------
 
   function calcularNotaPromedio() {
-
-  }
-  //-----------------------------------------------
-
-  function mostrarMayorNota() {
-
+    promedio (estudiantes);
   }
   //-----------------------------------------------
 
   function mostrarMenorNota() {
-
+    notaBaja(estudiantes)
   }
   //----------------------------------------------
 
@@ -92,7 +123,7 @@
   }
   //----------------------------------
   function mostrarMayorNota() {
-    calcularNotaMayor(estudiantes);
+    notaAlta(estudiantes);
   }
 
   </script>

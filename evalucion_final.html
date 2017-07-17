@@ -38,7 +38,7 @@
                     {"codigo":"6","nombre":"Horacio Hernandez","nota":9},
                     {"codigo":"7","nombre":"Victor Zapata","nota":6.5},
                     {"codigo":"8","nombre":"Veronica Nuñez","nota":8.5},
-                    {"codigo":"9","nombre":"Paula Villavicencio","nota":1},
+                    {"codigo":"9","nombre":"Paula Villavicencio","nota":3},
                     {"codigo":"10","nombre":"Mirtha Falcon","nota":9.5}
 
                   ];
@@ -54,21 +54,19 @@
   //-----------------------------------------------
   function  promedio(json){
   var out ="-------------NOTA PROMEDIO----------------";
-  var notaPromedio = json[0].nota;
+  //var notaPromedio = json[0].nota;
   var pos = 0;
   var aux = out+="";
   var promedio = 0;
 
   for (i = 0; i < json.length; i++) {
 
-  if (json[i].nota > notaPromedio) {
-  notaPromedio += json[i].nota;
-  promedio = notaPromedio / json.length;
+  promedio += json[i].nota / json.length;
   pos = i;
-  }
+
   }
 
-  document.getElementById("id3").innerHTML = aux +"Las nota promedio de los estudiantes es : " +json[pos].nombre + " " + "Con una nota de: " +promedio + "<br>";
+  document.getElementById("id2").innerHTML = "Las nota promedio de los estudiantes es :"+ promedio +"<br>";
   }
   //------------------------------------------------
   function notaAlta(json){
@@ -103,7 +101,7 @@
   }
   }
 
-  document.getElementById("id4").innerHTML = aux +"Las nota mas alta de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
+  document.getElementById("id4").innerHTML = aux +"Las nota mas baja de los estudiantes es: " +json[pos].nombre + " " + "Con una nota de: " +json[pos].nota + "<br>";
   }
 
   //-----------------------------------------------

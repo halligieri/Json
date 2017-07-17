@@ -54,16 +54,12 @@
   //-----------------------------------------------
   function  promedio(json){
   var out ="-------------NOTA PROMEDIO----------------";
-  //var notaPromedio = json[0].nota;
   var pos = 0;
   var aux = out+="";
   var promedio = 0;
 
   for (i = 0; i < json.length; i++) {
-
-  promedio += json[i].nota / json.length;
-  pos = i;
-
+    promedio += json[i].nota / json.length;
   }
 
   document.getElementById("id2").innerHTML = "Las nota promedio de los estudiantes es :"+ promedio +"<br>";

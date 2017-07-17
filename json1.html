@@ -5,6 +5,7 @@
     <title>Json 1</title>
   </head>
   <body>
+    <button onclick="leerJson(jsonObj)">Mostrar Mayor Edad</button><br>
     <p id="json1"></p>
 
   </body>
@@ -22,10 +23,10 @@
       for(i=0;i<json.estudiantes.length;i++) {
         listaEstudiantes+="Codigo: "+json.estudiantes[i].codigo+ "Nombre: " + json.estudiantes[i].nombre + "<br>";
       }
-      document.getElementById('json1').innerHTML = listaEstudiantes;
+        document.getElementById('json1').innerHTML = listaEstudiantes;
     }
 
 
-  leerJson(jsonObj);
+  //leerJson(jsonObj);
   </script>
 </html>
